@@ -1,6 +1,7 @@
 .movieCard {
     list-style: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .movieImg {
@@ -10,4 +11,11 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     background-color: azure;
+}
+
+@media screen and (max-width: 560px) {
+    .movieImg {
+        width: 100%;
+        height: auto;
+    }
 }
