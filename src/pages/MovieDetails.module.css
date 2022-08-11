@@ -1,0 +1,16 @@
+.detailsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.col {
+    max-width: 400px;
+}
+
+.movieImage {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
