@@ -6,8 +6,8 @@ export function MovieDetails() {
   return (
     <div className={style.detailsContainer}>
       <img className={style.col + " " + style.movieImage} src={imgUrl} alt={movie.title} />
-      <div className={style.col}>
-        <p>
+      <div className={style.col + " " + style.movieDetails}>
+        <p className={style.item}>
           <strong>Title: </strong>
           {movie.title}
         </p>
