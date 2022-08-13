@@ -1,15 +1,30 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import movie from "./movie.json";
+import { get } from "../utils/httpClient";
 import style from "./MovieDetails.module.css";
 
 export function MovieDetails() {
   const { movieId } = useParams();
-  
-  
+  const [movie, setMovie] = useState(null);
+
+  useEffect (() => {
+    get("/movie/" + movieId).then((data) => {
+      setMovie(data);
+    })
+  }, [movieId]);
+
+  if (!movie) {
+    return null;
+  }
+
   const imgUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
   return (
     <div className={style.detailsContainer}>
-      <img className={`${style.col} ${style.movieImage}`}src={imgUrl} alt={movie.title} />
+      <img
+        className={`${style.col} ${style.movieImage}`}
+        src={imgUrl}
+        alt={movie.title}
+      />
       <div className={`${style.col} ${style.movieDetails}`}>
         <p className={style.item}>
           <strong>Title: </strong>
