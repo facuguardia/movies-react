@@ -1,0 +1,20 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.spinning {
+  animation: spinner 1s linear;
+  -webkit-animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
