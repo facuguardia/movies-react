@@ -1,32 +1,31 @@
 import style from "./Search.module.css";
-import { FaSearch } from 'react-icons/fa';
-import { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "../hooks/useQuery";
 
 export function Search() {
   const query = useQuery();
   const search = query.get("search");
-
-  const [searchText, setserchText] = useState("");
   const history = useHistory();
 
-  useEffect(() => {
-    setserchText(search || "");
-  }, [search]);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        history.push("/?search=" + searchText);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <form className={style.searchContainer} onSubmit={handleSubmit}>
       <div className={style.searchBox}>
-        <input className={style.searchInput} type="text" value={searchText} onChange={(e)=> setserchText(e.target.value)}/>
-        <button className={style.searchButton} type="submit">
-          <FaSearch size={20} />
-        </button>
+        <input
+          className={style.searchInput}
+          placeholder="Title"
+          type="text"
+          value={search}
+          onChange={(e) => {
+            const value = e.target.value;
+            history.push("/?search=" + value);
+          }}
+        />
+        <FaSearch className={style.searchButton} size={20} color="black" />
       </div>
     </form>
   );

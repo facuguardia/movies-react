@@ -3,14 +3,12 @@ import { useParams } from "react-router";
 import { Spinner } from "../components/Spinner";
 import { get } from "../utils/httpClient";
 import style from "./MovieDetails.module.css";
+import placeholder from "../placeholder.png";
 
 export function MovieDetails() {
-  // capturamos en identificador de la pelicula, el cual es pasado en el switch de la ruta /movie/:movieId.
   const { movieId } = useParams();
-  // efecto de loading para la demora en la carga de peliculas y sus detalles.
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState(null);
-  // useEffect nos permite hacer un llamado asincrono y nos trae el identificador que tenga la pelicuala seleccionada, el id lo vas a encontrar en la ruta de la pelicula seleccionada.
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,7 +23,9 @@ export function MovieDetails() {
     return <Spinner />;
   }
 
-  const imgUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
+  const imgUrl = movie.poster_path
+  ? "https://image.tmdb.org/t/p/w300" + movie.poster_path
+  : placeholder;
   return (
     <div className={style.detailsContainer}>
       <img
