@@ -24,7 +24,7 @@ export function MoviesGrid({ search }) {
     });
   }, [search, page]);
 
-  if (movies.length === 0) {
+  if (!isLoading && movies.length === 0) {
     return <Empty />;
   }
 
