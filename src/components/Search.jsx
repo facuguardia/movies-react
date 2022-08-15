@@ -1,4 +1,4 @@
-import style from "./Search.module.css";
+import styles from "./Search.module.css";
 import { FaSearch } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import { useQuery } from "../hooks/useQuery";
@@ -13,10 +13,10 @@ export function Search() {
   };
 
   return (
-    <form className={style.searchContainer} onSubmit={handleSubmit}>
-      <div className={style.searchBox}>
+    <form className={styles.searchContainer} onSubmit={handleSubmit}>
+      <div className={styles.searchBox}>
         <input
-          className={style.searchInput}
+          className={styles.searchInput}
           type="text"
           placeholder="Title"
           aria-label="Search Movies"
@@ -26,7 +26,7 @@ export function Search() {
             history.push("/?search=" + value);
           }}
         />
-        <FaSearch className={style.searchButton} size={20} color="black" />
+        <FaSearch className={styles.searchButton} size={20} color="black" />
       </div>
     </form>
   );
