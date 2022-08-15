@@ -1,5 +1,5 @@
 import { MoviesCard } from "./MovieCard";
-import styles from "./MovieGrid.module.css";
+import styles from "./MoviesGrid.module.css";
 import { useEffect, useState } from "react";
 import { get } from "../utils/httpClient";
 import { Spinner } from "../components/Spinner";
