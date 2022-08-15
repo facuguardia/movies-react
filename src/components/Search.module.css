@@ -18,11 +18,18 @@
 }
 
 .searchInput {
+  font-size: 1.2rem;
   height: 30px;
   border-radius: 10px;
-  -webkit-border-radius: ;
-  -moz-border-radius: ;
-  -ms-border-radius: ;
-  -o-border-radius: ;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
   padding: 5px 30px 5px 10px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border: 1px solid #f88ec2;
+  box-shadow: 0 0 5px #ebbed4;
 }

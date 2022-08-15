@@ -11,6 +11,7 @@ export function MovieDetails() {
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState(null);
   // useEffect nos permite hacer un llamado asincrono y nos trae el identificador que tenga la pelicuala seleccionada, el id lo vas a encontrar en la ruta de la pelicula seleccionada.
+
   useEffect(() => {
     setIsLoading(true);
 
